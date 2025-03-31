@@ -10,8 +10,9 @@ export default function Home() {
   return (
     <main>
       <h1>lol welcome to my website</h1>
-      <Button variant={"outline"}>what</Button>
-
+      <Button>
+        <CameraIcon /> Start here!
+      </Button>
     </main>
   );
 }
