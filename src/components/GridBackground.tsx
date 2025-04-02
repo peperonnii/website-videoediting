@@ -20,7 +20,7 @@ export default function Home() {
         ease: "circ.inOut",
         stagger: 0.025,
       });
-      let tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
+      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
       tl.from(text.chars, {
         color: "#10f000",
         stagger: 0.02,
