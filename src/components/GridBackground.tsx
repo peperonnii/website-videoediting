@@ -16,7 +16,7 @@ export default function Home() {
     );
     if (typeof window !== "undefined") {
       // Apply SplitType to elements with the [animate] attribute
-      let typeSplit = new SplitType("[animate]", {
+      const typeSplit = new SplitType("[animate]", {
         types: ["lines", "words", "chars"],
         tagName: "span",
       });
