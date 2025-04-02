@@ -15,20 +15,20 @@ export default function Home() {
       { opacity: 2, scale: 1, y: 0, duration: 1.25, ease: "expo.out" }
     );
     if (typeof window !== "undefined") {
-      // Apply SplitType to elements with the [animate] attribute
-      const typeSplit = new SplitType("[animate]", {
-        types: ["lines", "words", "chars"],
-        tagName: "span",
-      });
-      console.log(typeSplit);
+      const text = new SplitType('.intro-heading');
+      const words = text.chars;
 
-      // Animate the elements using GSAP
-      gsap.from("[animate] .intro-heading", {
-        y: "100%",
+      // let tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
+      // tl.from(words, { rotation: 360 });
+
+      gsap.from(words, {
+        x: "-50%",
+        y: "130%",
+        rotation: 90,
         opacity: 0,
         duration: 0.5,
-        ease: "elastic.inOut",
-        stagger: 0.1,
+        ease: "back.inOut",
+        stagger: 0.02,
       });
     }
   }, []);
@@ -44,7 +44,7 @@ export default function Home() {
           <h1
             ref={titleRef}
             className="intro-heading"
-          >Dotted Grid Animated</h1>
+          >Best Video Editor In The Universe</h1>
         </div>
       </div>
     </main>
