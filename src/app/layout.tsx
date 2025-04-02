@@ -3,8 +3,16 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Geist, Geist_Mono } from "next/font/google";
+import { Tomorrow } from "next/font/google";
+
 import './styles/globals.css';
 import './styles/main.css';
+
+const tomorrow = Tomorrow({
+  weight: "600",  // Specify the font weight if needed
+  subsets: ["latin"], // You can include other subsets as needed
+  variable: "--font-tomorrow",  // Optional: Declare a CSS variable for easy use
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${tomorrow.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
         <Analytics />

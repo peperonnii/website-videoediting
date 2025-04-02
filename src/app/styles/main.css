@@ -1,19 +1,24 @@
-/* Add the Google Font to your CSS */
-@import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap');
-
-/* Set the font family globally */
 h1 {
-  font-family: 'Tomorrow', sans-serif;
+  font-family: var(--font-tomorrow);
   font-weight: 600;
 }
 
 .intro-heading {
-  font-size: clamp(3rem, 12vw, 12rem);
+  font-size: clamp(3rem, 5vw, 10rem);
   font-weight: bold;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: -0.05em;
-  color: white;
   display: block;
   text-align: center;
+}
+
+.author-box {
+  border: 2px dashed green;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.author-name {
+  font-size: 1.2rem;
 }
