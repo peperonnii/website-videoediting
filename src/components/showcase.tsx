@@ -18,7 +18,6 @@ export default function Showcase() {
 
   return (
     <div className="relative w-full h-full min-h-screen overflow-hidden">
-      {/* Animated Background */}
       <div
         ref={bgRef}
         className="absolute inset-0 w-full h-full min-h-screen z-0"

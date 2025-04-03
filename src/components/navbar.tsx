@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LucideMailbox, Mail, PhoneCall, Send } from "lucide-react"
+import { PhoneCall, Send } from "lucide-react"
 import { Button } from "./ui/button";
 import Link from "next/link";
 
