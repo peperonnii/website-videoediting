@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PhoneCall } from "lucide-react"
+import { LucideMailbox, Mail, PhoneCall, Send } from "lucide-react"
 import { Button } from "./ui/button";
 import Link from "next/link";
 
@@ -25,11 +25,14 @@ export default function Navbar() {
         }`}
     >
 
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">Dylan Byrne</h1>
-        <Button variant={"outline"} className="ml-auto">
+      <div className="flex items-center justify-center space-x-2">
+        <Button variant={"outline"} >
           <PhoneCall />
           <Link href="/login">Ready to Book a Call?</Link>
+        </Button>
+        <Button variant={"link"} >
+          <Send />
+          <Link href="/login">DM</Link>
         </Button>
       </div>
     </nav>

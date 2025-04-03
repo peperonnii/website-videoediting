@@ -17,8 +17,28 @@ h1 {
   border: 2px dashed green;
   border-radius: 6px;
   padding: 10px;
+
 }
 
 .author-name {
   font-size: 1.2rem;
+}
+
+.lfv {
+  font-size: clamp(2rem, 4vw, 7rem);
+}
+
+.carousel-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container>div {
+  scroll-snap-align: center;
+  flex: 0 0 100%;
 }
