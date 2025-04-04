@@ -70,7 +70,7 @@ export default function Home() {
               <div className="space-y-1">
                 <h4 className="text-sm font-medium leading-none author-name">Dylan Byrne</h4>
                 <p className="text-sm text-muted-foreground author-description">
-                  There is a war for your viewer's attention out there. I craft premium video edits that deliberately engage your audience whilst realising your video's potential inside the algorithm.
+                  There is a war for your viewer&apos;s attention out there. I craft premium video edits that deliberately engage your audience whilst realising your video&apos;s potential inside the algorithm.
                 </p>
               </div>
 
