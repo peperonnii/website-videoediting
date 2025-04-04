@@ -1,7 +1,9 @@
 import GridBackground from "@/components/GridBackground";
 import Navbar from "@/components/navbar";
 import Showcase from "@/components/showcase";
-import Testimonials from "@/components/testimonials"; "@/components/testimonials";
+
+
+import Testimonials from "@/components/testimonials";
 
 export const metadata = {
   title: "Dylan's VFX Studio",
