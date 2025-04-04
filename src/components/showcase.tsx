@@ -7,11 +7,14 @@ export default function Showcase() {
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.to(bgRef.current, {
-      scale: 1.2,
+    gsap.fromTo(bgRef.current, {
+      scale: 0,
       duration: 10,
-      repeat: -1,
-      yoyo: true,
+      ease: "expo.inOut",
+    }, {
+      scale: 1.2,
+      duration: 4,
+      delay: 3,
       ease: "expo.inOut",
     });
   }, []);

@@ -1,9 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import { Separator } from "@/components/ui/separator";
+import { BsTwitterX } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
+import { RxDiscordLogo } from "react-icons/rx";
+import { Button } from "./ui/button";
 
 export default function Home() {
   const gridRef = useRef(null);
@@ -63,20 +68,37 @@ export default function Home() {
           <div className="flex-1 flex items-start justify-center">
             <div className="flex flex-col space-y-4 w-full max-w-md px-4">
               <div className="space-y-1">
-                <h4 className="text-sm font-medium leading-none">Radix Primitives</h4>
-                <p className="text-sm text-muted-foreground">
-                  An open-source UI component library.
+                <h4 className="text-sm font-medium leading-none author-name">Dylan Byrne</h4>
+                <p className="text-sm text-muted-foreground author-description">
+                  There is a war for your viewer's attention out there. I craft premium video edits that deliberately engage your audience whilst realising your video's potential inside the algorithm.
                 </p>
               </div>
 
               <Separator className="my-4" />
-
-              <div className="flex h-5 items-center space-x-4 text-sm">
-                <div>Blog</div>
+              <div className="flex h-5 items-center justify-center space-x-4 text-sm">
+                <div>
+                  <Button variant="ghost" size="icon" className="mx-6">
+                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                      <BsTwitterX className="!w-6 !h-6" />
+                    </Link>
+                  </Button>
+                </div>
                 <Separator orientation="vertical" />
-                <div>Docs</div>
+                <div>
+                  <Button variant="ghost" size="icon" className="mx-6">
+                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                      <RxDiscordLogo className="!w-6 !h-6" />
+                    </Link>
+                  </Button>
+                </div>
                 <Separator orientation="vertical" />
-                <div>Source</div>
+                <div>
+                  <Button variant="ghost" size="icon" className="mx-6">
+                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                      <HiOutlineMail className="!w-6 !h-6" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

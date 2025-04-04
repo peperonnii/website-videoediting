@@ -22,7 +22,7 @@ export default function Testimonials() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Is it animated?</AccordionTrigger>
+            <AccordionTrigger>What software do you use to create your videos?</AccordionTrigger>
             <AccordionContent>
               Yes. It's animated by default, but you can disable it if you prefer.
             </AccordionContent>
