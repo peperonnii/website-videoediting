@@ -13,33 +13,27 @@ h1 {
   text-align: center;
 }
 
-.author-box {
-  border: 2px dashed green;
-  border-radius: 6px;
-  padding: 10px;
-
-}
-
 .author-name {
   font-family: var(--font-yesteryear);
   font-size: 1.5rem;
 }
 
+.author-description {
+  font-family: var(--font-syne);
+  font-size: 0.9rem;
+}
+
+.question {
+  font-family: var(--font-tomorrow);
+  font-size: 1rem;
+  font-style: italic;
+
+}
+
+.answer {
+  font-family: var(--font-syne);
+}
+
 .lfv {
   font-size: clamp(2rem, 4vw, 7rem);
-}
-
-.carousel-container {
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-}
-
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-container>div {
-  scroll-snap-align: center;
-  flex: 0 0 100%;
 }

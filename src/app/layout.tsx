@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Geist, Geist_Mono } from "next/font/google";
-import { Tomorrow } from "next/font/google";
-import { Yesteryear } from "next/font/google";
+import { Geist, Geist_Mono, Tomorrow, Yesteryear, Syne_Mono } from "next/font/google";
 
 import './styles/globals.css';
 import './styles/main.css';
@@ -13,6 +11,12 @@ const tomorrow = Tomorrow({
   weight: "600",  // Specify the font weight if needed
   subsets: ["latin"], // You can include other subsets as needed
   variable: "--font-tomorrow",  // Optional: Declare a CSS variable for easy use
+});
+
+const syne = Syne_Mono({
+  weight: "400",  // Specify the font weight if needed
+  subsets: ["latin"], // You can include other subsets as needed
+  variable: "--font-syne",  // Optional: Declare a CSS variable for easy use
 });
 
 const yesteryear = Yesteryear({
@@ -51,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${tomorrow.variable} ${yesteryear.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${tomorrow.variable} ${yesteryear.variable} ${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}
       >
         {children}
         <Analytics />
