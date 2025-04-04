@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const gridRef = useRef(null);
@@ -23,8 +24,8 @@ export default function Home() {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
       tl.from(text.chars, {
         color: "#10f000",
-        stagger: 0.02,
-        duration: 0.5,
+        stagger: 0.025,
+        duration: 0.25,
         ease: "elastic.in",
       });
 
@@ -38,16 +39,48 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-      <div className="relative w-full h-screen bg-black">
+      <div className="relative w-full h-screen bg-black overflow-hidden">
+        {/* Background Grid */}
         <div
           ref={gridRef}
           className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:30px_30px] opacity-50"
         ></div>
-        <div className="relative z-10 flex items-center justify-center h-full text-white">
-          <h1
-            ref={titleRef}
-            className="intro-heading pr-10 pl-10"
-          >Best Video Editor In The Universe</h1>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Top Section - Heading */}
+          <div className="flex-2 flex items-center justify-center">
+            <h1
+              ref={titleRef}
+              className="intro-heading px-10 text-center text-4xl md:text-6xl font-bold"
+            >
+              Best Video Editor In The Universe?
+            </h1>
+          </div>
+
+          {/* Bottom Section - Placeholder Paragraph */}
+
+          <div className="flex-1 flex items-start justify-center">
+            <div className="flex flex-col space-y-4 w-full max-w-md px-4">
+              <div className="space-y-1">
+                <h4 className="text-sm font-medium leading-none">Radix Primitives</h4>
+                <p className="text-sm text-muted-foreground">
+                  An open-source UI component library.
+                </p>
+              </div>
+
+              <Separator className="my-4" />
+
+              <div className="flex h-5 items-center space-x-4 text-sm">
+                <div>Blog</div>
+                <Separator orientation="vertical" />
+                <div>Docs</div>
+                <Separator orientation="vertical" />
+                <div>Source</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </main>
