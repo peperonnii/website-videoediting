@@ -13,10 +13,12 @@ import { Button } from "./ui/button";
 export default function Home() {
   const gridRef = useRef(null);
   const titleRef = useRef(null);
+  const authorRef = useRef(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const text = new SplitType('.intro-heading');
+      const authorText = new SplitType('.author-description');
 
       gsap.from(text.chars, {
         y: "130%",
@@ -26,12 +28,29 @@ export default function Home() {
         ease: "circ.inOut",
         stagger: 0.025,
       });
+      gsap.from(authorText.chars, {
+        x: "110%",
+        opacity: 0,
+        duration: 0.3,
+        ease: "elastic.in",
+        delay: 0.7,
+        stagger: 0.02,
+      });
+      gsap.from(authorRef.current, {
+        opacity: 0,
+        duration: 1.2,
+        ease: "expo.in"
+      });
+
+
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
       tl.from(text.chars, {
         color: "#10f000",
+        scale: 1.2,
+        letterSpacing: 1.5,
         stagger: 0.025,
         duration: 0.25,
-        ease: "elastic.in",
+        ease: "bounce.inOut",
       });
 
       gsap.fromTo(
@@ -66,8 +85,8 @@ export default function Home() {
           {/* Bottom Section - Placeholder Paragraph */}
 
           <div className="flex-1 flex items-start justify-center">
-            <div className="flex flex-col space-y-4 w-full max-w-md px-4">
-              <div className="space-y-1">
+            <div ref={authorRef} className="flex flex-col space-y-4 w-full max-w-md px-4">
+              <div className="space-y-1 author-box">
                 <h4 className="text-sm font-medium leading-none author-name">Dylan Byrne</h4>
                 <p className="text-sm text-muted-foreground author-description">
                   There is a war for your viewer&apos;s attention out there. I craft premium video edits that deliberately engage your audience whilst realising your video&apos;s potential inside the algorithm.

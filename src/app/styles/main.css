@@ -26,8 +26,6 @@ h1 {
 .question {
   font-family: var(--font-tomorrow);
   font-size: 1rem;
-  font-style: italic;
-
 }
 
 .answer {
@@ -36,4 +34,5 @@ h1 {
 
 .lfv {
   font-size: clamp(2rem, 4vw, 7rem);
+  font-family: var(--font-zendots);
 }

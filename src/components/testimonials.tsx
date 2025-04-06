@@ -18,7 +18,7 @@ export default function Testimonials() {
 
         <Accordion type="single" collapsible className="w-full max-w-2xl">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="question">What kind payment do you accept?</AccordionTrigger>
+            <AccordionTrigger className="question">What type of payment do you accept?</AccordionTrigger>
             <AccordionContent className="answer">
               I mostly deal in paypal, however I can accept blue-chip cryptocoins like BTC, ETH or SOL. Stablecoins like USDT is also accepted. I also take bank transfer if you prefer. No other forms of payment will be accepted.
             </AccordionContent>

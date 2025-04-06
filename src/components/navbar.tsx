@@ -26,7 +26,7 @@ export default function Navbar() {
     >
 
       <div className="flex items-center justify-center space-x-2">
-        <Button variant={"ghost"} >
+        <Button variant={"outline"} >
           <PhoneCall />
           <Link href="/login">Ready to Book a Call?</Link>
         </Button>
