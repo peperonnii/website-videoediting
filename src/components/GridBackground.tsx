@@ -8,12 +8,19 @@ import { Separator } from "@/components/ui/separator";
 import { BsTwitterX } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { RxDiscordLogo } from "react-icons/rx";
+import { LuSend } from "react-icons/lu";
+import { Copy, PhoneCall } from "lucide-react";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, } from '@/components/ui/dialog';
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   const gridRef = useRef(null);
   const titleRef = useRef(null);
   const authorRef = useRef(null);
+
+  const discordHandle = 'YourDiscordHandle#1234';
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -48,6 +55,7 @@ export default function Home() {
         color: "#10f000",
         scale: 1.2,
         letterSpacing: 1.5,
+        textShadow: "2px 10px 10px rgba(255, 255, 255, 0.2)",
         stagger: 0.025,
         duration: 0.25,
         ease: "bounce.inOut",
@@ -84,8 +92,8 @@ export default function Home() {
 
           {/* Bottom Section - Placeholder Paragraph */}
 
-          <div className="flex-1 flex items-start justify-center">
-            <div ref={authorRef} className="flex flex-col space-y-4 w-full max-w-md px-4">
+          <div className="flex flex-1 flex-col items-center justify-center">
+            <div ref={authorRef} className="flex flex-col space-y-3 w-full max-w-md px-4 ">
               <div className="space-y-1 author-box">
                 <h4 className="text-sm font-medium leading-none author-name">Dylan Byrne</h4>
                 <p className="text-sm text-muted-foreground author-description">
@@ -97,18 +105,48 @@ export default function Home() {
               <div className="flex h-5 items-center justify-center space-x-4 text-sm">
                 <div>
                   <Button variant="ghost" size="icon" className="mx-6">
-                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                    <Link href="https://x.com/peperronnii" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                       <BsTwitterX className="!w-6 !h-6" />
                     </Link>
                   </Button>
                 </div>
                 <Separator orientation="vertical" />
                 <div>
-                  <Button variant="ghost" size="icon" className="mx-6">
-                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                      <RxDiscordLogo className="!w-6 !h-6" />
-                    </Link>
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="ghost" size="icon" className="mx-6">
+                        <RxDiscordLogo className="!w-6 !h-6" />
+                      </Button>
+                    </DialogTrigger>
+
+                    <DialogContent className="bg-foreground text-background sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle className="flex flex-row items-center">
+                          <LuSend className="mr-2" />
+                          Send me a DM!
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="relative mt-4 z-50">
+                        <Input
+                          value={discordHandle}
+                          readOnly
+                          className="pr-12 font-mono"
+                        />
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          onClick={() =>
+                            toast("Event has been created", {
+                              description: "Sunday, December 03, 2023 at 9:00 AM",
+                            })
+                          }
+                          className="absolute right-1 top-1/2 -translate-y-1/2 !m-0"
+                        > <Copy />
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
                 <Separator orientation="vertical" />
                 <div>
@@ -120,10 +158,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="flex justify-center items-start pt-16 pb-10">
+
+              <Button variant={"outline"} >
+                <PhoneCall />
+                <Link href="https://cal.com/fvnky" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  Ready to Book a Call?</Link>
+              </Button>
+            </div>
           </div>
 
         </div>
       </div>
-    </main>
+    </main >
   );
 }

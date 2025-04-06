@@ -28,12 +28,9 @@ export default function Navbar() {
       <div className="flex items-center justify-center space-x-2">
         <Button variant={"outline"} >
           <PhoneCall />
-          <Link href="/login">Ready to Book a Call?</Link>
+          <Link href="https://cal.com/fvnky" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            Ready to Book a Call?</Link>
         </Button>
-        {/* <Button variant={"link"} > */}
-        {/*   <Send /> */}
-        {/*   <Link href="/login">DM</Link> */}
-        {/* </Button> */}
       </div>
     </nav>
   );
