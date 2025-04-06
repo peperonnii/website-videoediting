@@ -19,6 +19,7 @@ export default function Home() {
   const gridRef = useRef(null);
   const titleRef = useRef(null);
   const authorRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const discordHandle = 'YourDiscordHandle#1234';
 
@@ -49,6 +50,16 @@ export default function Home() {
         ease: "expo.in"
       });
 
+      gsap.fromTo(buttonRef.current, {
+        scale: 2,
+        duration: 2,
+        delay: 2,
+        ease: "bounce.inOut"
+      }, {
+        scale: 1,
+        duration: 1.2,
+        ease: "bounce.inOut"
+      });
 
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
       tl.from(text.chars, {
@@ -92,8 +103,8 @@ export default function Home() {
 
           {/* Bottom Section - Placeholder Paragraph */}
 
-          <div className="flex flex-1 flex-col items-center justify-center">
-            <div ref={authorRef} className="flex flex-col space-y-3 w-full max-w-md px-4 ">
+          <div ref={authorRef} className="flex flex-1 flex-col items-center justify-center">
+            <div className="flex flex-col space-y-3 w-full max-w-md px-4 ">
               <div className="space-y-1 author-box">
                 <h4 className="text-sm font-medium leading-none author-name">Dylan Byrne</h4>
                 <p className="text-sm text-muted-foreground author-description">
@@ -150,20 +161,30 @@ export default function Home() {
                 </div>
                 <Separator orientation="vertical" />
                 <div>
-                  <Button variant="ghost" size="icon" className="mx-6">
-                    <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                      <HiOutlineMail className="!w-6 !h-6" />
-                    </Link>
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="ghost" size="icon" className="mx-6">
+                        <HiOutlineMail className="!w-6 !h-6" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-foreground text-background sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle className="flex flex-row items-center">
+                          Mail currently unavailable :(
+                        </DialogTitle>
+                        <p>Send me a DM or book a call instead!</p>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-start pt-16 pb-10">
+            <div ref={buttonRef} className="flex justify-center items-start pt-16 pb-10">
 
               <Button variant={"outline"} >
                 <PhoneCall />
                 <Link href="https://cal.com/fvnky" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                  Ready to Book a Call?</Link>
+                  Book a Call With Me Now!</Link>
               </Button>
             </div>
           </div>
